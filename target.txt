@@ -1,0 +1,13 @@
+mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=calculator -Dsonar.projectName=calculator -Dsonar.host.url=http://localhost:9000 -Dsonar.token=%SONAR_TOKEN%
+
+
+generate new token if the build fails and update the pom.xml
+
+
+mvn spring-boot:run
+
+Operation	URL	Expected Result
+Addition	http://localhost:8080/api/calculator/add?a=10&b=5	15
+Subtraction	http://localhost:8080/api/calculator/subtract?a=10&b=5	5
+Multiplication	http://localhost:8080/api/calculator/multiply?a=10&b=5	50
+Division	http://localhost:8080/api/calculator/divide?a=10&b=5	2
